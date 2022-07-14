@@ -1,0 +1,1081 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="juruo999">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>网络流 - juruo999's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetbrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="juruo999&#39;s Blog" class="md-header__button md-logo" aria-label="juruo999's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            juruo999's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              网络流
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        简介
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        图论
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../solution/at2318/" class="md-tabs__link">
+        题解
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="juruo999&#39;s Blog" class="md-nav__button md-logo" aria-label="juruo999's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    juruo999's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          简介
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="简介" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          简介
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        内容列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/tagidx/" class="md-nav__link">
+        标签索引
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/about/" class="md-nav__link">
+        我是谁
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/todo/" class="md-nav__link">
+        To-Do
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          图论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图论" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          图论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          网络流
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        网络流
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    网络与流
+  </a>
+  
+    <nav class="md-nav" aria-label="网络与流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    割
+  </a>
+  
+    <nav class="md-nav" aria-label="割">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    求最大流
+  </a>
+  
+    <nav class="md-nav" aria-label="求最大流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edmonds-karp" class="md-nav__link">
+    Edmonds-Karp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isap" class="md-nav__link">
+    ISAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hlpp" class="md-nav__link">
+    预流推进 &amp; HLPP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          题解
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="题解" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          题解
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solution/at2318/" class="md-nav__link">
+        AT2318 Robot and String
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solution/P4385/" class="md-nav__link">
+        P4385 Dvapravca
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solution/P2934/" class="md-nav__link">
+        P2934 Safe Travel G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../solution/P4012/" class="md-nav__link">
+        P4012 深海机器人问题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    网络与流
+  </a>
+  
+    <nav class="md-nav" aria-label="网络与流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    割
+  </a>
+  
+    <nav class="md-nav" aria-label="割">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    求最大流
+  </a>
+  
+    <nav class="md-nav" aria-label="求最大流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edmonds-karp" class="md-nav__link">
+    Edmonds-Karp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isap" class="md-nav__link">
+    ISAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hlpp" class="md-nav__link">
+    预流推进 &amp; HLPP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">网络流<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>用水管来类比：</p>
+<blockquote>
+<p>自来水厂（源点）要经过水管（边）把水运到石老板家（汇点）。
+每条单向水管连接两个站点，水管都有一个最大流量，源点有无限的水。显然，每条水管可能有水流，可能没有。
+问：自来水厂 <strong>最多</strong> 能给石老板送多少水？</p>
+</blockquote>
+<h2 id="_2">网络与流<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>网络</strong>：图（一般为有向无重边）</li>
+<li><strong>容量网络</strong>：边权为该边容量的网络</li>
+<li><strong>流量网络</strong>：边权为该边实际流量的网络</li>
+<li><strong>剩余网络</strong>：容量网络边权减去剩余网络对应边权形成的网络</li>
+<li><strong>满流</strong>：流量网络的流量达到最大（即<strong>流入汇点的流量最大</strong> ）</li>
+<li><strong>增广路</strong>：剩余网络中从源到汇使路径中最小剩余边权不为零的路径</li>
+<li><strong>源 &amp; 汇</strong>：所有流量从源流出，流入汇点</li>
+</ul>
+<h3 id="_4">性质<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong> 剩余网络在满流时不会有一条增广路</strong></p>
+<p>若满流时剩余网络仍有增广路，则沿着增广路增加流量总能使最终流量增加</p>
+<p><strong> 任何一个合法的流量网络中，除了源和汇外的所有节点，流入量之和等于流出量之和</strong></p>
+<p>直观理解：水不会在中间节点凭空产生或消失</p>
+<h2 id="_5">割<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">定义<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>给定一张图 <span class="arithmatex">\(G=\{V,E\}\)</span> 和源点 <span class="arithmatex">\(A\)</span>，汇点 <span class="arithmatex">\(B\)</span>。</p>
+<p>割集 <span class="arithmatex">\(C(S,T)\)</span> 被定义为 <span class="arithmatex">\(\{(u,v) |u\in S,v\in T,(u,v)\in E\}\)</span></p>
+<p>即 <span class="arithmatex">\(C(S,T)\)</span> 为给定 <span class="arithmatex">\(S,T\)</span> 两点集间的边集</p>
+<p><strong>最小割</strong>：<strong>边权和最小</strong>的割集 <span class="arithmatex">\(C(S,T)\)</span>，使 <span class="arithmatex">\(A\in S,B\in T\)</span>。</p>
+<p>即花费最小代价把源点到汇点的所有路径切断，使源点汇点不连通，切断一条边的代价为它的边权。</p>
+<h3 id="_7">性质<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong> 一个流量网络的每一个割集，对应的流量和都等于总流量 </strong></p>
+<p>一个形象的例子：恐怖分子切断了若干水管，使原来流向石老板家的水全部流走，最终从被切断水管流出的水量就是原来流向石老板家的水</p>
+<p><strong> 同一张图上，每一个割都大于等于每一个流 </strong></p>
+<p>考虑任意一个割集和任意一个流，由上一条性质得，割集对应的流量等于总流量，而割集对应的边权和大于等于边权对应流量（每一条边的流量小于等于边权）</p>
+<p><strong> 最大流等于最小割 </strong></p>
+<p>满流时，根据增广路的性质，剩余网络中源点汇点不存在最小剩余边权不为零的路径。<strong>断开所有剩余流量为零的边</strong>，另 <span class="arithmatex">\(S\)</span> 为所有与源点连通的点集，<span class="arithmatex">\(T=V-S\)</span>，则割集 <span class="arithmatex">\(C(S,T)\)</span> 包含的所有边<strong>剩余流量</strong>为0，即<strong>流量等于容量</strong>。由此得 <span class="arithmatex">\(C(S,T)\)</span> 的边权和为最大流的流量。由上一条性质得，<span class="arithmatex">\(C(S,T)\)</span> 为最小割。综上，最大流等于最小割。</p>
+<h2 id="_8">求最大流<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>部分引自 <a href="https://oi-wiki.org/graph/flow/max-flow/">OI-Wiki</a></p>
+<p>这里介绍以下算法：</p>
+<ul>
+<li>Edmonds-Karp</li>
+<li>ISAP</li>
+<li>预流推进 &amp; HLPP</li>
+</ul>
+<details class="tip" open="open">
+<summary>小贴士</summary>
+<p>考场上，尽量使用比较好写的 <code>Dinic</code> 或 <code>ISAP</code>，这两个算法虽然比 <code>HLPP</code> 理论复杂度高，但足以解决绝大多数问题，而且好写。</p>
+</details>
+<h3 id="edmonds-karp">Edmonds-Karp<a class="headerlink" href="#edmonds-karp" title="Permanent link">&para;</a></h3>
+<p>由于最大流的性质，我们可以每次寻找增广路</p>
+<h3 id="isap">ISAP<a class="headerlink" href="#isap" title="Permanent link">&para;</a></h3>
+<h3 id="hlpp">预流推进 &amp; HLPP<a class="headerlink" href="#hlpp" title="Permanent link">&para;</a></h3>
+<p>前面的算法都基于寻找增广路来求解最大流，这里再讲一些不基于增广路的算法。</p>
+<p>预流推进的核心在于允许节点的流入大于流出。我们把允许流入大于流出的网络称为预流。</p>
+<p>预流推进算法维护每个结点的高度 <span class="arithmatex">\(h(u)\)</span> ，并且规定溢出的结点 <span class="arithmatex">\(u\)</span> 如果要推送超额流，只能向高度小于 <span class="arithmatex">\(u\)</span> 的结点推送；如果 <span class="arithmatex">\(u\)</span> 没有相邻的高度小于 <span class="arithmatex">\(u\)</span> 的结点，就增加 <span class="arithmatex">\(u\)</span> 的高度（重贴标签）。</p>
+<p>初始化时，<span class="arithmatex">\(h(s)=n,h(other)=0\)</span>，并沿边推送起始节点流量。</p>
+<p>最高标号预流推进算法 ( <code>HLPP</code> ) 与预流推进的区别在于，在预流推进时，<code>HLPP</code> 会优先推送高度大的节点的流量。为了在随机图上跑出接近 <code>Dinic</code> 速度，我们还可以对 <code>HLPP</code> 进行如下优化：</p>
+<ul>
+<li>将 <span class="arithmatex">\(h(u)\)</span> 初始化为 <span class="arithmatex">\(dis(u,t)\)</span>，将 <span class="arithmatex">\(h(s)\)</span> 仍初始化为 <span class="arithmatex">\(n\)</span>。用 BFS 求出 <span class="arithmatex">\(dis(u,t)\)</span>，即可减少大量重贴标签操作。</li>
+<li>用桶代替优先队列，复杂度降低一个 <span class="arithmatex">\(\log\)</span>。</li>
+<li>因为每次取出的是最高节点，而重贴标签又只会增加当前节点高度，所以如果当前节点高度上没有其他节点，比当前节点高的所有节点都不可能向当前节点以后的节点推送流量，所以为了尽快将流量推送回 <span class="arithmatex">\(s\)</span>，我们把所有比当前节点高的节点高度变为 <span class="arithmatex">\(n+1\)</span>。</li>
+</ul>
+<p>优化后时间复杂度为 <span class="arithmatex">\(O(n^2\sqrt m)\)</span></p>
+<h2 id="_9">例题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.luogu.com.cn/problem/P3376">P3376 【模板】网络最大流</a></p>
+<p>网络流模板。</p>
+<details class="note">
+<summary><a href="https://www.luogu.com.cn/problem/P3376">P3376 【模板】网络最大流</a> 参考代码</summary>
+<p>留坑</p>
+</details>
+<p><a href="https://www.luogu.com.cn/problem/P4722">P4722 【模板】最大流 加强版 / 预流推进</a></p>
+<p>只有用 <code>HLPP</code> 才能过。</p>
+<details class="note">
+<summary><a href="https://www.luogu.com.cn/problem/P4722">P4722 【模板】最大流 加强版 / 预流推进</a> 参考代码（使用 HLPP）</summary>
+<p><img alt="AC 100Pts" src="https://s3.bmp.ovh/imgs/2021/11/01ac9d5e6df5a941.jpg" /></p>
+<p>部分参考 OI-Wiki 与 P4722 题解，因为本人巨喜欢空行，核心部分写了 65 行，一共 110 行。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include`&lt;iostream&gt;`</span>
+<span class="cp">#include `&lt;cstdio&gt;`</span>
+<span class="cp">#include `&lt;cstring&gt;`</span>
+<span class="cp">#include `&lt;algorithm&gt;`</span>
+<span class="cp">#include `&lt;vector&gt;`</span>
+<span class="cp">#include `&lt;queue&gt;`</span>
+<span class="c1">// stO OI-Wiki Orz</span>
+<span class="cp">#define il inline</span>
+<span class="cp">#define For(i,l,u) for(int i=(l);i&lt;=(u);i++)</span>
+<span class="cp">#define RFor(i,l,u) for(int i=(u);i&gt;=(l);i--)</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">INF</span><span class="o">=</span><span class="mi">2147483647</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="o">=</span><span class="mi">2405</span><span class="p">,</span><span class="n">maxm</span><span class="o">=</span><span class="mi">120005</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">E</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">maxm</span><span class="o">*</span><span class="mi">2</span><span class="p">],</span><span class="n">t</span><span class="p">[</span><span class="n">maxm</span><span class="o">*</span><span class="mi">2</span><span class="p">],</span><span class="n">v</span><span class="p">[</span><span class="n">maxm</span><span class="o">*</span><span class="mi">2</span><span class="p">],</span><span class="n">nxt</span><span class="p">[</span><span class="n">maxm</span><span class="o">*</span><span class="mi">2</span><span class="p">],</span><span class="n">oth</span><span class="p">[</span><span class="n">maxm</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="p">,</span><span class="n">fst</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">il</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u_</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v_</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">w_</span><span class="p">){</span><span class="w">   </span><span class="c1">// add edge</span>
+<span class="w">        </span><span class="o">++</span><span class="n">tot</span><span class="p">;</span><span class="n">f</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span><span class="o">=</span><span class="n">u_</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span><span class="o">=</span><span class="n">v_</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span><span class="o">=</span><span class="n">w_</span><span class="p">,</span><span class="n">nxt</span><span class="p">[</span><span class="n">tot</span><span class="p">]</span><span class="o">=</span><span class="n">fst</span><span class="p">[</span><span class="n">u_</span><span class="p">],</span><span class="w">    </span><span class="n">fst</span><span class="p">[</span><span class="n">u_</span><span class="p">]</span><span class="o">=</span><span class="n">tot</span><span class="p">;</span><span class="k">return</span><span class="w"> </span><span class="n">tot</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">il</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">addf</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">w</span><span class="p">){</span><span class="w">    </span><span class="c1">// add edge and     inverse edge</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">d1</span><span class="o">=</span><span class="n">add</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">),</span><span class="n">d2</span><span class="o">=</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">oth</span><span class="p">[</span><span class="n">d1</span><span class="p">]</span><span class="o">=</span><span class="n">d2</span><span class="p">;</span><span class="n">oth</span><span class="p">[</span><span class="n">d2</span><span class="p">]</span><span class="o">=</span><span class="n">d1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cp">#define ForP(u,i) for(int i=E::fst[u];i;i=E::nxt[i])</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Flow</span><span class="p">{</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">e</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">vis</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">gap</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">mxh</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vector</span><span class="err">`</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err">`</span><span class="w"> </span><span class="n">mp</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="w"></span>
+
+<span class="n">il</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">bfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">queue</span><span class="err">`</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err">`</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="n">h</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vis</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">(),</span><span class="n">v</span><span class="p">;</span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">ForP</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="o">=</span><span class="n">E</span><span class="o">::</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">E</span><span class="o">::</span><span class="n">v</span><span class="p">[</span><span class="n">E</span><span class="o">::</span><span class="n">oth</span><span class="p">[</span><span class="n">i</span><span class="p">]]){</span><span class="w"></span>
+<span class="w">                    </span><span class="n">vis</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">h</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">il</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">push</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">init</span><span class="o">=</span><span class="n">u</span><span class="o">==</span><span class="n">s</span><span class="p">;</span><span class="w"> </span><span class="c1">// good idea from OI-Wiki</span>
+<span class="w">        </span><span class="n">ForP</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">E</span><span class="o">::</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">w</span><span class="o">=</span><span class="n">E</span><span class="o">::</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">w</span><span class="o">==</span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="n">init</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">!=</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">){</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">sw</span><span class="o">=</span><span class="n">init</span><span class="o">?</span><span class="n">w</span><span class="o">:</span><span class="n">min</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">e</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span><span class="w">  </span><span class="c1">// from OI-Wiki too</span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">v</span><span class="o">!=</span><span class="n">s</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">v</span><span class="o">!=</span><span class="n">t</span><span class="p">){</span><span class="w"> </span><span class="n">mp</span><span class="p">[</span><span class="n">h</span><span class="p">[</span><span class="n">v</span><span class="p">]].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w">    </span><span class="n">mxh</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">mxh</span><span class="p">,</span><span class="n">h</span><span class="p">[</span><span class="n">v</span><span class="p">]);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">e</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">-=</span><span class="n">sw</span><span class="p">;</span><span class="n">e</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">+=</span><span class="n">sw</span><span class="p">;</span><span class="n">E</span><span class="o">::</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-=</span><span class="n">sw</span><span class="p">;</span><span class="n">E</span><span class="o">::</span><span class="n">v</span><span class="p">[</span><span class="n">E</span><span class="o">::</span><span class="n">oth</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">+=</span><span class="n">sw</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">u</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">il</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">relabel</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">INF</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ForP</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">i</span><span class="p">){</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">E</span><span class="o">::</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">],</span><span class="n">h</span><span class="p">[</span><span class="n">E</span><span class="o">::</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]]);</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">++</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">&lt;</span><span class="n">n</span><span class="p">){</span><span class="w"></span>
+<span class="w">            </span><span class="n">mp</span><span class="p">[</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span><span class="n">mxh</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">mxh</span><span class="p">,</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span><span class="n">gap</span><span class="p">[</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="w">    </span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">il</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sel</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">mp</span><span class="p">[</span><span class="n">mxh</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">mxh</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">){</span><span class="w"> </span><span class="n">mxh</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mxh</span><span class="o">==</span><span class="mi">-1</span><span class="o">?</span><span class="mi">0</span><span class="o">:</span><span class="n">mp</span><span class="p">[</span><span class="n">mxh</span><span class="p">][</span><span class="n">mp</span><span class="p">[</span><span class="n">mxh</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="n">il</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HLPP</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="n">For</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">){</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">INF</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">bfs</span><span class="p">(</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">==</span><span class="n">INF</span><span class="p">){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">For</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">){</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">INF</span><span class="p">){</span><span class="n">gap</span><span class="p">[</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;}</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">h</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">n</span><span class="p">;</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="n">sel</span><span class="p">()){</span><span class="w">     </span><span class="c1">// from OI-Wiki</span>
+<span class="w">            </span><span class="n">mp</span><span class="p">[</span><span class="n">mxh</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">)){</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="p">((</span><span class="o">--</span><span class="n">gap</span><span class="p">[</span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]])</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
+<span class="w">                    </span><span class="n">For</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">){</span><span class="w"></span>
+<span class="w">                        </span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">!=</span><span class="n">s</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">i</span><span class="o">!=</span><span class="n">t</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">&lt;</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">n</span><span class="w">    </span><span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
+<span class="w">                            </span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                        </span><span class="p">}</span><span class="w"></span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="n">relabel</span><span class="p">(</span><span class="n">u</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">e</span><span class="p">[</span><span class="n">t</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(){</span><span class="w"></span>
+
+<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">m</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">;</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">u</span><span class="p">,</span><span class="o">&amp;</span><span class="n">v</span><span class="p">,</span><span class="o">&amp;</span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">E</span><span class="o">::</span><span class="n">addf</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">Flow</span><span class="o">::</span><span class="n">HLPP</span><span class="p">());</span><span class="w"></span>
+
+<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>很多问题都可以转化为网络流问题，建议参考 <a href="https://www.luogu.com.cn/training/42162">网络流24题</a></p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../../about/todo/" class="md-footer__link md-footer__link--prev" aria-label="上一页: To-Do" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              To-Do
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../solution/at2318/" class="md-footer__link md-footer__link--next" aria-label="下一页: AT2318 Robot and String" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              AT2318 Robot and String
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+    
+  </body>
+</html>

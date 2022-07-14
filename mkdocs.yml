@@ -1,0 +1,79 @@
+﻿site_name: "juruo999's Blog"
+site_author: juruo999
+theme:
+  name: material
+  static_templates:
+    - 404.html
+  language: 'zh'
+  palette:
+    primary: 'white'
+    accent: 'red'
+  include_search_page: false
+  search_index_only: true
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+  font:
+    code: 'Jetbrains Mono'
+
+nav:
+  - 简介:
+    - "about/index.md"
+    - "about/tagidx.md"
+    - "about/about.md"
+    - To-Do: "about/todo.md"
+  - 图论:
+    - 网络流: "graph/network-flow.md"
+  - 题解:
+    - AT2318 Robot and String: "solution/at2318.md"
+    - P4385 Dvapravca: "solution/P4385.md"
+    - P2934 Safe Travel G: "solution/P2934.md"
+    - P4012 深海机器人问题: "solution/P4012.md"
+  
+
+plugins:
+  - blogging:
+      dirs: # The directories to be included
+        - graph
+        - solution
+      features:
+        tags: {}
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.progressbar
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
