@@ -36,7 +36,8 @@ nav:
   
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\u200b\-]'
   - blogging:
       dirs: # The directories to be included
         - graph
