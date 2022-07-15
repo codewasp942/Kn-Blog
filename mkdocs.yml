@@ -2,6 +2,7 @@
 site_author: juruo999
 theme:
   name: material
+  custom_dir: overrides
   static_templates:
     - 404.html
   language: 'zh'
@@ -18,9 +19,10 @@ theme:
 
 nav:
   - 简介:
+    - "index.md"
+    - "about/about.md"
     - "about/index.md"
     - "about/tagidx.md"
-    - "about/about.md"
     - To-Do: "about/todo.md"
   - 图论:
     - 网络流: "graph/network-flow.md"
@@ -30,9 +32,11 @@ nav:
     - P2934 Safe Travel G: "solution/P2934.md"
     - P4012 深海机器人问题: "solution/P4012.md"
     - P5297 完美塔防: "solution/P5297.md"
+    - P3973 [TJOI2015]线性代数: "solution/P3973.md"
   
 
 plugins:
+  - search
   - blogging:
       dirs: # The directories to be included
         - graph

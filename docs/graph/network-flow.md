@@ -117,45 +117,46 @@ tags:
     部分参考 OI-Wiki 与 P4722 题解，因为本人巨喜欢空行，核心部分写了 65 行，一共 110 行。
 
     ```cpp
-    #include`<iostream>`
-    #include `<cstdio>`
-    #include `<cstring>`
-    #include `<algorithm>`
-    #include `<vector>`
-    #include `<queue>`
+    #include <iostream>
+    #include <cstdio>
+    #include <cstring>
+    #include <algorithm>
+    #include <vector>
+    #include <queue>
     // stO OI-Wiki Orz
     #define il inline
     #define For(i,l,u) for(int i=(l);i<=(u);i++)
     #define RFor(i,l,u) for(int i=(u);i>=(l);i--)
-    const int INF=2147483647;
-
+    typedef long long ll;
+    const ll INF=1145141919810000;
+    
     using namespace std;
-
+    
     const int maxn=2405,maxm=120005;
-
-    int n,m,s,t;
-
+    
     namespace E{
-    	int f[maxm*2],t[maxm*2],v[maxm*2],nxt[maxm*2],oth[maxm*2];
+    	int f[maxm*2],t[maxm*2];ll v[maxm*2];int nxt[maxm*2],oth[maxm*2];
     	int tot,fst[maxn];
-    	il int add(int u_,int v_,int w_){	// add edge
-    		++tot;f[tot]=u_,t[tot]=v_,v[tot]=w_,nxt[tot]=fst[u_],    fst[u_]=tot;return tot;
+    	il int add(int u_,int v_,ll w_){	// add edge
+    		++tot;f[tot]=u_,t[tot]=v_,v[tot]=w_,nxt[tot]=fst[u_],fst[u_]=tot;return tot;
     	}
-    	il void addf(int u,int v,int w){	// add edge and     inverse edge
+    	il void addf(int u,int v,ll w){	// add edge and inverse edge
     		int d1=add(u,v,w),d2=add(v,u,0);
     		oth[d1]=d2;oth[d2]=d1;
     	}
     }
-
+    
     #define ForP(u,i) for(int i=E::fst[u];i;i=E::nxt[i])
-
+    
     namespace Flow{
-
-    int h[maxn],e[maxn],vis[maxn],gap[maxn],mxh;
-    	vector`<int>` mp[maxn];
-
-    il void bfs(int s){
-    		static queue`<int>` q;
+    	
+    	int n,m,s,t;
+    	
+    	ll h[maxn],e[maxn],mxh;int vis[maxn],gap[maxn+5];
+    	vector<int> mp[maxn+5];
+    	
+    	il void bfs(int s){
+    		static queue<int> q;
     		while(!q.empty()){ q.pop(); }
     		q.push(s);h[s]=0;vis[s]=1;
     		while(!q.empty()){
@@ -167,13 +168,13 @@ tags:
     			}
     		}
     	}
-    	il int push(int u){
+    	il ll push(int u){
     		bool init=u==s;	// good idea from OI-Wiki
     		ForP(u,i){
-    			int v=E::t[i],w=E::v[i];
+    			int v=E::t[i];ll w=E::v[i];
     			if(w==0 || ( !init && h[v]!=h[u]-1) ){ continue; }
-    			int sw=init?w:min(w,e[u]);	// from OI-Wiki too
-    			if(e[v]==0 && v!=s && v!=t){ mp[h[v]].push_back(v);    mxh=max(mxh,h[v]); }
+    			ll sw=init?w:min(w,e[u]);	// from OI-Wiki too
+    			if(e[v]==0 && v!=s && v!=t){ mp[h[v]].push_back(v);mxh=max(mxh,h[v]); }
     			e[u]-=sw;e[v]+=sw;E::v[i]-=sw;E::v[E::oth[i]]+=sw;
     			if(e[u]==0){ return 0; }
     		}
@@ -183,16 +184,16 @@ tags:
     		h[u]=INF;
     		ForP(u,i){ if(E::v[i]){ h[u]=min(h[u],h[E::t[i]]); } }
     		if(++h[u]<n){
-    			mp[h[u]].push_back(u);mxh=max(mxh,h[u]);gap[h[u]]    ++;
+    			mp[h[u]].push_back(u);mxh=max(mxh,h[u]);gap[h[u]]++;
     		}
     	}
     	il int sel(){
     		while(mp[mxh].size()==0 && mxh>=0){ mxh--; }
     		return mxh==-1?0:mp[mxh][mp[mxh].size()-1];
     	}
-
-    il int HLPP(){
-    		For(i,1,n){ h[i]=INF; } bfs(t);
+    	
+    	il ll HLPP(){
+    		For(i,1,n){ h[i]=INF; } bfs(t); 
     		if(h[s]==INF){ return 0; }
     		For(i,1,n){ if(h[i]!=INF){gap[h[i]]++;} }
     		h[s]=n;push(s);
@@ -202,7 +203,7 @@ tags:
     			if(push(u)){
     				if((--gap[h[u]])==0){
     					For(i,1,n){
-    						if(i!=s && i!=t && h[u]<h[i] && h[i]<n    +1){
+    						if(i!=s && i!=t && h[u]<h[i] && h[i]<n+1){
     							h[i]=n+1;
     						}
     					}
@@ -212,22 +213,36 @@ tags:
     		}
     		return e[t];
     	}
-
+    	
     }
-
+    
+    int n,m,s,t;
+    ll e[205][205];
+    
     int main(){
-
-    scanf("%d%d%d%d",&n,&m,&s,&t);
+    	
+    	scanf("%d%d%d%d",&n,&m,&s,&t);
+    	Flow::n=n;
+    	Flow::m=m;
+    	Flow::s=s;
+    	Flow::t=t;
     	for(int i=1;i<=m;i++){
-    		int u,v,w;scanf("%d%d%d",&u,&v,&w);
-    		E::addf(u,v,w);
+    		int u,v;ll w;scanf("%d%d%lld",&u,&v,&w);
+    		e[u][v]+=w;
     	}
-
-    printf("%d\n",Flow::HLPP());
-
-    return 0;
+    	
+    	for(int i=1;i<=n;i++){
+    		for(int j=1;j<=n;j++){
+    			if(e[i][j]){
+    				E::addf(i,j,e[i][j]);
+    			}
+    		}
+    	}
+    	
+    	printf("%lld\n",Flow::HLPP());
+    	
+    	return 0;
     }
-
     ```
 
 很多问题都可以转化为网络流问题，建议参考 [网络流24题](https://www.luogu.com.cn/training/42162)

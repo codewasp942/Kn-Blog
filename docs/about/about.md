@@ -1,4 +1,4 @@
-# 我是谁
+# 关于我
 
 **Luogu**: [juruo999](https://www.luogu.com.cn/user/371818)  
 **Github**: [codewasp942](https://github.com/codewasp942)  
