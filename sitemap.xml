@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/about/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/about/about/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/about/tagidx/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/about/todo/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/graph/network-flow/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/solution/P2934/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/solution/P4012/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/solution/P4385/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/solution/P5297/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://codewasp942.github.io/Kn-Blog/solution/at2318/</loc>
-         <lastmod>2022-07-14</lastmod>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>None</loc>
+         <lastmod>2022-07-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

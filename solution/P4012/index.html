@@ -10,8 +10,6 @@
         <meta name="author" content="juruo999">
       
       
-        <link rel="canonical" href="https://codewasp942.github.io/Kn-Blog/solution/P4012/">
-      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
@@ -112,6 +110,39 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
   </nav>
   
@@ -130,7 +161,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         简介
       </a>
     </li>
@@ -243,6 +274,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/about/" class="md-nav__link">
+        关于我
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         内容列表
       </a>
@@ -259,20 +318,6 @@
     <li class="md-nav__item">
       <a href="../../about/tagidx/" class="md-nav__link">
         标签索引
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../about/about/" class="md-nav__link">
-        我是谁
       </a>
     </li>
   
@@ -494,8 +539,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../P5297/" class="md-nav__link">
-        P5297 完美塔防
+      <a href="../P3973/" class="md-nav__link">
+        P3973 [TJOI2015]线性代数
       </a>
     </li>
   
@@ -585,7 +630,7 @@
 <p>如果每个标本可以无限次采集，那就很好办，网格图中的每个点向它东边、北边的点连一条边，费用为对应标本价值，容量为 <span class="arithmatex">\(\infty\)</span>，表示每条边可以无限次走。</p>
 <p>但是这里每个标本<strong>只能被采集一次</strong>。于是我们想到把一条边拆成两条边，一条费用为这条边上的标本价值，容量为 <span class="arithmatex">\(1\)</span>，另一条费用为 <span class="arithmatex">\(0\)</span>，容量为 <span class="arithmatex">\(\infty\)</span>。</p>
 <p>最后图是这样的</p>
-<p><img alt="" src="https://s3.bmp.ovh/imgs/2022/03/9d549b9cc566d67b.png" /></p>
+<p><img alt="" src="../src/P4012-grid-graph.png" /></p>
 <p>图中绿点表示出发点，蓝点表示目的地，注意图中的一个箭头能同时表示最终图中的两条边</p>
 <p>最后跑一个最大费用最大流即可。</p>
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
@@ -814,11 +859,11 @@
 <span class="normal">170</span>
 <span class="normal">171</span>
 <span class="normal">172</span>
-<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include`&lt;iostream&gt;`</span>
-<span class="cp">#include `&lt;cstdio&gt;`</span>
-<span class="cp">#include `&lt;cstring&gt;`</span>
-<span class="cp">#include `&lt;algorithm&gt;`</span>
-<span class="cp">#include `&lt;queue&gt;`</span>
+<span class="normal">173</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;cstring&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;queue&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">ll</span><span class="p">;</span><span class="w"></span>
@@ -826,15 +871,15 @@
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">cflow</span><span class="p">{</span><span class="w">    </span><span class="c1">// 原始对偶算法</span>
 
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="o">=</span><span class="mi">5005</span><span class="p">,</span><span class="n">maxm</span><span class="o">=</span><span class="mi">50005</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxn</span><span class="o">=</span><span class="mi">5005</span><span class="p">,</span><span class="n">maxm</span><span class="o">=</span><span class="mi">50005</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">;</span><span class="w"></span>
 
-<span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">oth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">oth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="mi">-1</span><span class="p">)</span><span class="o">^</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">edge</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">edge</span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">;</span><span class="w"> </span><span class="n">ll</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nxt</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="n">edge</span><span class="p">(){}</span><span class="w"></span>
 <span class="w">        </span><span class="n">edge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u_</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v_</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">w_</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">c_</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">nxt_</span><span class="p">)</span><span class="w"></span>
@@ -842,7 +887,7 @@
 <span class="w">    </span><span class="p">}</span><span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">maxm</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fst</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">tp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">addedge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">c</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">addedge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">c</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="n">e</span><span class="p">[</span><span class="o">++</span><span class="n">tp</span><span class="p">]</span><span class="o">=</span><span class="n">edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">fst</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span><span class="w"></span>
 <span class="w">        </span><span class="n">fst</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">tp</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
@@ -851,18 +896,18 @@
 <span class="w">        </span><span class="n">addedge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="n">ll</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">h</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">mxw</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">frm</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">fre</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">h</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">mxw</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="kt">int</span><span class="w"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">frm</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span><span class="n">fre</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">vis</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">spfa</span><span class="p">(){</span><span class="w"></span>
-<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">queue</span><span class="err">`</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="err">`</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">spfa</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
-<span class="n">memset</span><span class="p">(</span><span class="n">dis</span><span class="p">,</span><span class="mh">0x3f</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">dis</span><span class="p">));</span><span class="w"></span>
+<span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">dis</span><span class="p">,</span><span class="mh">0x3f</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">dis</span><span class="p">));</span><span class="w"></span>
 <span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">cnt</span><span class="p">));</span><span class="w"></span>
 <span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span><span class="w"></span>
 
-<span class="n">dis</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vis</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">dis</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vis</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="n">cnt</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span><span class="w"></span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="n">vis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">cnt</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">&gt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="w"></span>
@@ -880,7 +925,7 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">clear</span><span class="p">(){</span><span class="w"></span>
 <span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">cflow</span><span class="o">::</span><span class="n">fst</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">cflow</span><span class="o">::</span><span class="n">fst</span><span class="p">));</span><span class="n">cflow</span><span class="o">::</span><span class="n">tp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n_</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">s_</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">t_</span><span class="p">){</span><span class="w"></span>
@@ -888,15 +933,15 @@
 <span class="w">        </span><span class="n">n</span><span class="o">=</span><span class="n">n_</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">s_</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">t_</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">pr</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">pr</span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="n">ll</span><span class="w"> </span><span class="n">dis</span><span class="p">;</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">;</span><span class="n">pr</span><span class="p">(){}</span><span class="n">pr</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u_</span><span class="p">,</span><span class="n">ll</span><span class="w"> </span><span class="n">dis_</span><span class="p">){</span><span class="n">u</span><span class="o">=</span><span class="n">u_</span><span class="p">,</span><span class="n">dis</span><span class="o">=</span><span class="n">dis_</span><span class="p">;}</span><span class="w"></span>
 <span class="w">    </span><span class="p">};</span><span class="w"></span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">pr</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">pr</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">dis</span><span class="o">!=</span><span class="n">b</span><span class="p">.</span><span class="n">dis</span><span class="p">)</span><span class="o">?</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">dis</span><span class="o">&gt;</span><span class="n">b</span><span class="p">.</span><span class="n">dis</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">u</span><span class="o">&gt;</span><span class="n">b</span><span class="p">.</span><span class="n">u</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="kt">bool</span><span class="w"> </span><span class="n">dijkstra</span><span class="p">(){</span><span class="w"></span>
-<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">priority_queue</span><span class="err">`</span><span class="o">&lt;</span><span class="n">pr</span><span class="o">&gt;</span><span class="err">`</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">dijkstra</span><span class="p">(){</span><span class="w"></span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">pr</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="n">memset</span><span class="p">(</span><span class="n">dis</span><span class="p">,</span><span class="mh">0x3f</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">dis</span><span class="p">));</span><span class="w"></span>
 <span class="w">        </span><span class="n">dis</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">mxw</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">inf</span><span class="p">;</span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">pr</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
@@ -917,14 +962,14 @@
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dis</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">!=</span><span class="n">inf</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="n">ll</span><span class="w"> </span><span class="n">mincost</span><span class="p">,</span><span class="n">maxflow</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">ll</span><span class="w"> </span><span class="n">mincost</span><span class="p">,</span><span class="n">maxflow</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">MCMF</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">MCMF</span><span class="p">(){</span><span class="w"></span>
 
-<span class="n">spfa</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">spfa</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="n">memcpy</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">dis</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">h</span><span class="p">));</span><span class="w"></span>
 
-<span class="n">mincost</span><span class="o">=</span><span class="n">maxflow</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">mincost</span><span class="o">=</span><span class="n">maxflow</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="n">dijkstra</span><span class="p">()){</span><span class="w"></span>
 <span class="w">            </span><span class="n">ll</span><span class="w"> </span><span class="n">flow</span><span class="o">=</span><span class="n">mxw</span><span class="p">[</span><span class="n">t</span><span class="p">];</span><span class="w"></span>
 <span class="w">            </span><span class="n">maxflow</span><span class="o">+=</span><span class="n">flow</span><span class="p">;</span><span class="w"></span>
@@ -948,11 +993,11 @@
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span><span class="w"></span>
 
-<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="o">&amp;</span><span class="n">q</span><span class="p">);</span><span class="n">p</span><span class="o">++</span><span class="p">,</span><span class="n">q</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">// 注意有 (p+1)*(q+1) 个点</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span><span class="o">&amp;</span><span class="n">p</span><span class="p">,</span><span class="o">&amp;</span><span class="n">q</span><span class="p">);</span><span class="n">p</span><span class="o">++</span><span class="p">,</span><span class="n">q</span><span class="o">++</span><span class="p">;</span><span class="w">  </span><span class="c1">// 注意有 (p+1)*(q+1) 个点</span>
 
-<span class="n">cflow</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w">   </span><span class="c1">// 以 1 为源点，2 为汇点</span>
+<span class="w">    </span><span class="n">cflow</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="o">+</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w">   </span><span class="c1">// 以 1 为源点，2 为汇点</span>
 
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">p</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">  </span><span class="c1">// 向东路径</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">p</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">  </span><span class="c1">// 向东路径</span>
 <span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">q</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">            </span><span class="n">ll</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="n">cflow</span><span class="o">::</span><span class="n">addflow</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">id</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="n">t</span><span class="p">);</span><span class="w"> </span><span class="c1">// 费用取相反数转换为最小费用最大流</span>
@@ -961,7 +1006,7 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">q</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w">  </span><span class="c1">// 向北路径</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">q</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w">  </span><span class="c1">// 向北路径</span>
 <span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">p</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">            </span><span class="n">ll</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
 <span class="w">            </span><span class="n">cflow</span><span class="o">::</span><span class="n">addflow</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">id</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="n">t</span><span class="p">);</span><span class="w"></span>
@@ -969,22 +1014,22 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">a</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">a</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="n">ll</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">k</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">cflow</span><span class="o">::</span><span class="n">addflow</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">id</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// 出发点</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">b</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">b</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="n">ll</span><span class="w"> </span><span class="n">k</span><span class="p">;</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lld%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">k</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">cflow</span><span class="o">::</span><span class="n">addflow</span><span class="p">(</span><span class="n">id</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="mi">2</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// 目的地</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="n">cflow</span><span class="o">::</span><span class="n">MCMF</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">cflow</span><span class="o">::</span><span class="n">MCMF</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">-</span><span class="n">cflow</span><span class="o">::</span><span class="n">mincost</span><span class="p">);</span><span class="w">   </span><span class="c1">// 费用取了相反数</span>
 
-<span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
@@ -1020,13 +1065,13 @@
       
       
         
-        <a href="../P5297/" class="md-footer__link md-footer__link--next" aria-label="下一页: P5297 完美塔防" rel="next">
+        <a href="../P3973/" class="md-footer__link md-footer__link--next" aria-label="下一页: P3973 [TJOI2015]线性代数" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              P5297 完美塔防
+              P3973 [TJOI2015]线性代数
             </div>
           </div>
           <div class="md-footer__button md-icon">
