@@ -2,6 +2,7 @@
 site_author: juruo999
 theme:
   name: material
+  custom_dir: overrides
   static_templates:
     - 404.html
   language: 'zh'
