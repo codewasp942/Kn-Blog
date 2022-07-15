@@ -18,9 +18,10 @@ theme:
 
 nav:
   - 简介:
+    - "index.md"
+    - "about/about.md"
     - "about/index.md"
     - "about/tagidx.md"
-    - "about/about.md"
     - To-Do: "about/todo.md"
   - 图论:
     - 网络流: "graph/network-flow.md"
@@ -32,6 +33,7 @@ nav:
   
 
 plugins:
+  - search
   - blogging:
       dirs: # The directories to be included
         - graph
