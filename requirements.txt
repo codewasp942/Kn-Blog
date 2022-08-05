@@ -1,0 +1,5 @@
+mkdocs
+mkdocs-blogging-plugin
+mkdocs-material
+mkdocs-material-extensions
+pymdown-extensions
